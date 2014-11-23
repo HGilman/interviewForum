@@ -1,9 +1,16 @@
 package entities;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  * Created by Хасан on 16.11.2014.
  */
+@Entity
+@Table(name ="responses")
 public class Response {
+    @Id
     private int response_id;
     private int person_id;
     private String text;

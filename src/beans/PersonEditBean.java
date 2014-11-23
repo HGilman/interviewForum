@@ -1,5 +1,8 @@
-package entities;
+package beans;
 
+import javax.faces.bean.ManagedBean;
+import javax.inject.Named;
+import javax.faces.bean.ViewScoped;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -7,9 +10,9 @@ import javax.persistence.Table;
 /**
  * Created by Хасан on 15.11.2014.
  */
-@Entity
-@Table(name = "persons")
-public class Person {
+@ViewScoped
+@ManagedBean
+public class PersonEditBean {
     @Id
     private Integer person_id;
     private String first_name;
@@ -23,9 +26,9 @@ public class Person {
     private int companies_company_id;
     private int jobs_job_id;
 
-    public Person(){}
+    public PersonEditBean(){}
 
-    public  Person(Integer person_id, String first_name, String last_name, float rating, int age, String status, String login, String password, String email, int companies_company_id, int jobs_job_id) {
+    public  PersonEditBean(Integer person_id, String first_name, String last_name, float rating, int age, String status, String login, String password, String email, int companies_company_id, int jobs_job_id) {
         this.person_id = person_id;
         this.first_name = first_name;
         this.last_name = last_name;
@@ -83,8 +86,8 @@ public class Person {
         return jobs_job_id;
     }
 
-    public void setPerson_id(Integer p_id){
-        this.person_id = p_id;
+    public void setPerson_id(String p_id){
+        this.person_id = Integer.parseInt(p_id);
     }
 
     public void setFirst_name(String first_name) {
@@ -118,39 +121,11 @@ public class Person {
         this.email = email;
     }
 
-    public void setCompanies_company_id(int companies_company_id){
-        this.companies_company_id = companies_company_id;
+    public void setCompanies_company_id(String companies_company_id){
+        this.companies_company_id = Integer.parseInt(companies_company_id);
     }
 
-    public void setJobs_job_id(int jobs_job_id){
-        this.jobs_job_id = jobs_job_id;
-    }
-
-    public String toString(){
-        return "\n"+"Person id: " + getPerson_id()+"\n"+"First name: " + getFirst_name()+"\n"+
-                "Last name: " + getLast_name()+"\n"+"Rating: " + getRating()+"\n"+"Age: " + getAge()+"\n"+
-                "Status: " + getStatus()+"\n"+"Login: " + getLogin()+"\n"+"Password: " + getPassword()+"\n"+
-                "Email: " + getEmail()+"\n"+"Company id: " + getCompanies_company_id()+"\n"+"Job id: " + getJobs_job_id()+"\n";
-    }
-    
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (person_id != null ? person_id.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Person)) {
-            return false;
-        }
-        Person other = (Person) object;
-        if ((this.person_id == null && other.person_id != null)
-                || (this.person_id != null && !this.person_id.equals(other.person_id))) {
-            return false;
-        }
-        return true;
-    }    
+    public void setJobs_job_id(String jobs_job_id){
+        this.jobs_job_id = Integer.parseInt(jobs_job_id);
+    }  
 }

@@ -1,13 +1,23 @@
 package entities;
 
+import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  * Created by Хасан on 16.11.2014.
  */
-public class Job {
+ @Entity 
+ @Table(name = "jobs")
+public class Job  implements Serializable {
+    @Id 
     private int job_id;
     private String name;
+    
     public Job(){}
 
+   
     public Job(int job_id, String name) {
         this.job_id = job_id;
         this.name = name;
