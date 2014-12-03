@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <f:view>
+        <h:head>
+            <title>JSF Tutorial!</title>
+            <h:outputStylesheet library="css" name="autorizationStyle.css"  /> 
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        </h:head>
+        <h:body>
+            <br/>
+            <h:form style="color: white">
+                <p>Выберете профессию и место работы</p>
+                Профессия:
+                <h:selectOneMenu value="#{responseController.jobId}">
+                    <f:selectItem itemValue="" itemLabel="-- select one --" />
+                    <f:selectItems value="#{jobBean.namesOfJobs.entrySet()}" var="entry" 
+                                   itemValue="#{entry.key}" itemLabel="#{entry.value}" />
+                </h:selectOneMenu>
+                Компания:
+                <h:selectOneMenu value="#{responseController.companyId}" >
+                    <f:selectItem itemValue="" itemLabel="-- select one --" />
+                    <f:selectItems value="#{companyBean.namesOfCompanies.entrySet()}" var="entry" 
+                                   itemValue="#{entry.key}" itemLabel="#{entry.value}" />
+                </h:selectOneMenu>
+                <h:commandButton value="Submit" action="responses" />
+                <br/>
+                <!--<h:commandButton value="Logout" action="logout?faces-redirect=true" />-->
+            </h:form>   
+            <br/><br/><br/><br/>
+            <p style="color: white">Вы вошли как: #{connectedPerson.connectedPerson.login}</p>
+        </h:body>   
+    </f:view>
+</html>

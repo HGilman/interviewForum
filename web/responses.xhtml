@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"      
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <f:view>
+        <h:head>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+            <!--<h:outputStylesheet library="css" name="afterGreetingStyle.css"  />-->
+        </h:head>
+
+        <h:body style="text-align: left">
+            <!--<p>Special responses</p>-->
+            <p>Job: #{jobBean.namesOfJobs.get(responseController.jobId)}</p>
+            <p>Company: #{companyBean.namesOfCompanies.get(responseController.companyId)}</p>
+            <h:form id="specResponses_form">      
+                <h:messages showDetail="true"></h:messages>
+                <table>
+                    <tr>
+                        <td>|   ResponseID</td>
+                        <td>|   Person First Name</td>
+                        <td>|   Person Last Name</td>
+                        <td>|   Job</td>
+                        <td>|   Company</td>
+                        <td>|   Text</td>
+                        <td>|</td>
+                    </tr>                    
+                    <ui:repeat value="#{responseBean.getSpecialResponses(responseController.jobId, responseController.companyId)}" var="res">
+                        <tr>
+                            <td>| #{res.response_id}</td>
+                            <td>| #{personBean.findPerson(res.persons_person_id).getFirst_name()}</td>
+                            <td>| #{personBean.findPerson(res.persons_person_id).getLast_name()}</td>
+                            <td>| #{jobBean.findJob(res.jobs_job_id).getName()}</td>
+                            <td>| #{companyBean.findCompany(res.companies_company_id).getName()}</td>
+                            <td>| #{res.text}</td>
+                            <td>|</td>
+                        </tr>
+                    </ui:repeat>                    
+                </table>
+            </h:form> 
+            <p>Оставить отзыв</p>
+            <h:form  id="create_response">
+                <h:messages id="m"/>
+                <h:panelGrid columns="2">
+                    ID: <h:inputText value="#{responseEditBean.response_id}"/>
+                    Person ID: <h:inputText value="#{responseEditBean.persons_person_id}"/>
+                    Text name: <h:inputText value="#{responseEditBean.text}"/>
+                    Job:  <h:selectOneMenu value="#{responseEditBean.jobs_job_id}">
+                        <f:selectItem itemValue="" itemLabel="-- select one --" />
+                        <f:selectItems value="#{jobBean.namesOfJobs.entrySet()}" var="entry" 
+                                       itemValue="#{entry.key}" itemLabel="#{entry.value}" />
+                    </h:selectOneMenu>
+                    Company:  <h:selectOneMenu value="#{responseEditBean.companies_company_id}">
+                        <f:selectItem itemValue="" itemLabel="-- select one --" />
+                        <f:selectItems value="#{companyBean.namesOfCompanies.entrySet()}" var="entry" 
+                                       itemValue="#{entry.key}" itemLabel="#{entry.value}" />
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandButton value="Create" actionListener="#{responseBean.createResponse(responseEditBean)}">
+                    <!--<f:ajax execute="@form" render=":responses_form :create_response"/>-->
+                </h:commandButton>                
+            </h:form>      
+            <h:form>
+                <h:button value="Home" outcome="afterGreeting"/>
+            </h:form>
+        </h:body>
+    </f:view>
+</html>

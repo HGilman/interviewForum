@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html       xmlns="http://www.w3.org/1999/xhtml"
+            xmlns:h="http://xmlns.jcp.org/jsf/html"
+            xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+            xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <f:view>
+        <h:head >
+            <meta charset="UTF-8"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+            <h:outputStylesheet library="css" name="autorizationStyle.css"  /> 
+            <title>interviewForum</title>
+        </h:head>
+
+        <h:body>
+            <div class="headerStyle">
+                <h2>Добро пожаловать на InterviewHelper.ru</h2>
+                <h2>Здесь люди делятся опытом прохождения собеседований и дают советы</h2>
+            </div>
+
+            <h:form id="autorizationForm">
+
+                <p>Пожалуйста авторизуйтесь</p>
+                <table width="200px">
+                    <tr>
+                        <td>
+                            email:
+                        </td>
+                        <td>
+                            <h:inputText  value="#{connectedPerson.email}"/>
+                        </td>
+                        <td>
+                            <h:commandButton style="font: 14px Georgia,serif" value = "Войти" 
+                                             actionListener="#{connectedPerson.setConnectedPerson()}" action = "afterGreeting">
+                            </h:commandButton> 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            password:
+                        </td>
+                        <td><h:inputText value="#{connectedPerson.password}"/>
+                        </td>
+                        <td>
+                            <h:commandButton style="font: 14px Georgia,serif" value = "Регистрация"  action = "registration">
+                            </h:commandButton> 
+                        </td>
+                    </tr>
+                </table>
+                <br/>
+                <p>Или зайдите 
+                    <h:link value="анонимно" outcome ="afterGreeting" onclick="#{connectedPerson.setConnectedPerson(null)}"/>
+                </p>
+            </h:form>
+        </h:body>
+    </f:view>
+</html>
