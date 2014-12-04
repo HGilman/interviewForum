@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tables>
+    <persons>
+       <person>
+           <person_id>1</person_id>
+           <first_name>Хасан</first_name>
+           <last_name>Гильманов</last_name>
+           <login></login>
+           <password></password>
+           <email>gilmanov.hasan@mail.ru</email>
+           <rating>100</rating>
+           <age>21</age>
+           <status>admin</status>
+           <companies_company_id>1</companies_company_id>
+           <jobs_job_id>1</jobs_job_id>
+       </person>
+
+        <person>
+            <person_id>2</person_id>
+            <first_name>Вася</first_name>
+            <last_name>Пупкин</last_name>
+            <login></login>
+            <password></password>
+            <email>vasia.pupkin@mail.ru</email>
+            <rating>1</rating>
+            <age>20</age>
+            <status>authorized</status>
+            <companies_company_id>2</companies_company_id>
+            <jobs_job_id>2</jobs_job_id>
+        </person>
+
+        <person>
+            <person_id>3</person_id>
+            <first_name>Андрей</first_name>
+            <last_name>Аршавин</last_name>
+            <login></login>
+            <password></password>
+            <email>andrey@google.com</email>
+            <rating>50</rating>
+            <age>28</age>
+            <status>moderator</status>
+            <companies_company_id>3</companies_company_id>
+            <jobs_job_id>3</jobs_job_id>
+        </person>
+
+        <person>
+            <person_id>4</person_id>
+            <first_name>Алан</first_name>
+            <last_name>Дзагоев</last_name>
+            <login></login>
+            <password></password>
+            <email>alan@google.com</email>
+            <rating>50</rating>
+            <age>25</age>
+            <status>authorized</status>
+            <companies_company_id>4</companies_company_id>
+            <jobs_job_id>4</jobs_job_id>
+        </person>
+
+        <person>
+            <person_id>5</person_id>
+            <first_name>Василий</first_name>
+            <last_name>Уткин</last_name>
+            <login></login>
+            <password></password>
+            <email>ytkin@mail.ru</email>
+            <rating>60</rating>
+            <age>50</age>
+            <status>moderator</status>
+            <companies_company_id>5</companies_company_id>
+            <jobs_job_id>5</jobs_job_id>
+        </person>
+    </persons>
+
+    <companies>
+        <company>
+            <company_id>1</company_id>
+            <name>Яндекс</name>
+        </company>
+
+        <company>
+            <company_id>2</company_id>
+            <name>Google</name>
+        </company>
+
+        <company>
+            <company_id>3</company_id>
+            <name>Facebook</name>
+        </company>
+
+        <company>
+            <company_id>4</company_id>
+            <name>Первый канал</name>
+        </company>
+
+        <company>
+            <company_id>5</company_id>
+            <name>ФК Зенит</name>
+        </company>
+
+        <company>
+            <company_id>6</company_id>
+            <name>ФК Урал</name>
+        </company>
+    </companies>
+
+    <jobs>
+        <job>
+            <job_id>1</job_id>
+            <name>Java junior</name>
+        </job>
+
+        <job>
+            <job_id>2</job_id>
+            <name>Java Senior Developer</name>
+        </job>
+
+        <job>
+            <job_id>3</job_id>
+            <name>C++ Junior</name>
+        </job>
+
+        <job>
+            <job_id>4</job_id>
+            <name>C++ Senior Developer</name>
+        </job>
+
+        <job>
+            <job_id>5</job_id>
+            <name>Комментатор</name>
+        </job>
+
+        <job>
+            <job_id>6</job_id>
+            <name>Футболист</name>
+        </job>
+    </jobs>
+
+    <responses>
+        <response>
+        <response_id>1</response_id>
+        <text>Давали много задач</text>
+        <persons_person_id>1</persons_person_id>
+        <companies_company_id>1</companies_company_id>
+        <jobs_job_id>1</jobs_job_id>
+    </response>
+
+        <response>
+            <response_id>2</response_id>
+            <text>Почитайте Достоевского перед собеседованием</text>
+            <persons_person_id>2</persons_person_id>
+            <companies_company_id>2</companies_company_id>
+            <jobs_job_id>2</jobs_job_id>
+        </response>
+
+        <response>
+            <response_id>3</response_id>
+            <text>Больше бегайте, будьте в хорошей форме</text>
+            <persons_person_id>3</persons_person_id>
+            <companies_company_id>3</companies_company_id>
+            <jobs_job_id>3</jobs_job_id>
+        </response>
+
+    </responses>
+
+</tables>

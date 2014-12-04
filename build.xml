@@ -7,8 +7,13 @@
 <!-- the Compile on Save feature is turned off for the project. -->
 <!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
 <!-- in the project's Project Properties dialog box.-->
+<<<<<<< HEAD
 <project name="interviewForum" default="default" basedir=".">
     <description>Builds, tests, and runs the project interviewForum.</description>
+=======
+<project name="interviewJavaProject" default="default" basedir=".">
+    <description>Builds, tests, and runs the project interviewJavaProject.</description>
+>>>>>>> c0b96161b80bcc9925caf0235a036de0da02b940
     <import file="nbproject/build-impl.xml"/>
     <!--
 

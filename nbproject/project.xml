@@ -3,16 +3,35 @@
     <type>org.netbeans.modules.web.project</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/web-project/3">
+<<<<<<< HEAD
             <name>interviewForum</name>
             <minimum-ant-version>1.6.5</minimum-ant-version>
             <web-module-libraries/>
+=======
+            <name>interviewJavaProject</name>
+            <minimum-ant-version>1.6.5</minimum-ant-version>
+            <web-module-libraries>
+                <library dirs="200">
+                    <file>${file.reference.javax.persistence.jar}</file>
+                    <path-in-war>WEB-INF/lib</path-in-war>
+                </library>
+                <library dirs="200">
+                    <file>${file.reference.javaee.jar}</file>
+                    <path-in-war>WEB-INF/lib</path-in-war>
+                </library>
+            </web-module-libraries>
+>>>>>>> c0b96161b80bcc9925caf0235a036de0da02b940
             <web-module-additional-libraries/>
             <source-roots>
                 <root id="src.dir"/>
             </source-roots>
+<<<<<<< HEAD
             <test-roots>
                 <root id="test.src.dir"/>
             </test-roots>
+=======
+            <test-roots/>
+>>>>>>> c0b96161b80bcc9925caf0235a036de0da02b940
         </data>
     </configuration>
 </project>
